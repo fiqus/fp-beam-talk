@@ -8,7 +8,6 @@ defmodule Fp_beam_talk.MixProject do
       elixir: "~> 1.5",
       start_permanent: Mix.env() == :prod,
       deps: deps(),
-      aliases: aliases(),
       preferred_cli_env: [prexent: :prod],
       config_path: config_path()
     ]
@@ -23,12 +22,6 @@ defmodule Fp_beam_talk.MixProject do
   defp deps do
     [
       {:prexent, "~> 0.2"}
-    ]
-  end
-
-  defp aliases do
-    [
-      prexent: ["prexent README.md"]
     ]
   end
 
