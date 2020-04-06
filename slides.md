@@ -1,24 +1,71 @@
-# Welcome to fp_beam_talk!
+!header Functional programming with Erlang/Elixir
+!footer Fiqus - Cooperativa de Software
+!custom_css slides.css
 
+# Welcome to fp_beam_talk!
+We will talk about **Functional Programming** principles and present the **Erlang Ecosystem**, specially **Elixir**!
 ---
 
 # What is functional programming?
 
-TODO
+FP is a paradigm for building software by:
+* composing *pure functions*
+* avoiding shared state, mutable data and side-effects
+* declarative rather than imperative
 
 ---
 
 # Immutability
 In Erlang:
 !code code/immutability.erl erlang escript
+```** exception error: no match of right hand side value "Elixir"```
 
-In Elixir: 
-TODO: show re-binding
+In Elixir, once created the data is immutable, but exists re-binding:
+!code code/immutability.exs
 ---
 
 # Pattern matching
-intro
-example
+## The match operator (=)
+```elixir
+iex> x = 1
+1
+iex> 1 = x
+1
+iex> 2 = x
+** (MatchError) no match of right hand side value: 1
+```
+
+Can be used to match against complex data types (destructuring tuples):
+```elixir
+iex> {a, b, c} = {:hello, "world", 42}
+{:hello, "world", 42}
+iex> a
+:hello
+iex> b
+"world"
+```
+---
+
+# Pattern matching
+## The match operator (=)
+Match error will occur if the sides can't be matched:
+```elixir
+iex> {a, b, c} = {:hello, "world"}
+** (MatchError) no match of right hand side value: {:hello, "world"}
+```
+
+## The pin operator (^)
+Use the pin operator ^ when you want to pattern match against an existing variable’s value rather than rebinding the variable
+```elixir
+iex> x = 1
+1
+iex> {y, ^x} = {2, 1}
+{2, 1}
+iex> y
+2
+iex> {y, ^x} = {2, 2}
+** (MatchError) no match of right hand side value: {2, 2}
+```
 
 ---
 
@@ -34,36 +81,106 @@ TODO: add timers!
 
 ---
 
-# Lists
-TODO: define, match [head | tail]
+# Lists 
+```elixir
+iex> [1, 2, true, 3]
+[1, 2, true, 3]
+iex> length([1, 2, 3])
+3
+iex> [1, 2, 3] ++ [4, 5, 6]
+[1, 2, 3, 4, 5, 6]
+iex> [1, true, 2, false, 3, true] -- [true, false]
+[1, 2, 3, true]
+```
 
+Pattern match against lists:
+```elixir
+iex> [head | _] = [1, 2, 3]
+[1, 2, 3]
+iex> head
+1
+```
 ---
 
-# High order functions
-TODO: map, find, reduce
+# Higher order functions
+Any function which takes a function as an argument and can be applied over Functors, Lists and Streams.
 
+### Enum.map/2
+```elixir
+iex> Enum.map([1, 2, 3], fn x -> x * 2 end)
+[2, 4, 6]
+iex> Enum.map(%{1 => 2, 3 => 4}, fn {k, v} -> k * v end)
+[2, 12]
+```
+
+### Enum.reduce/2-3
+```elixir
+iex> Enum.reduce([1, 2, 3, 4], fn x, acc -> x * acc end)
+24
+```
 ---
 
 # List comprehension
-TODO: show erlang and elixir
+Comprehensions are syntactic sugar for mappings.
 
----
+### Erlang
+```erlang
+1> [X || X <- [1,2,a,3,4,b,5,6], X > 3].
+[a,4,b,5,6]
+2> [{X1, Y1} || X1 <- [1,2,3], Y1 <- [a,b]].
+[{1,a},{1,b},{2,a},{2,b},{3,a},{3,b}]
+```
 
-# Currification
+### Elixir
+```elixir
+iex> for n <- 1..4, do: n * n
+[1, 4, 9, 16]
+```
 
 ---
 
 # The BEAM
-TODO: explain a little about actor model, processes, mailboxes, supervisors, etc
+BEAM is the Erlang Virtual Machine, part of the Erlang Run-Time System (ERTS), which compiles Erlang and Elixir source code
+into bytecode (.beam file extension), which is executed on the BEAM.
+
+### Actor model
+Actors (processes) <-> Messages (mailboxes)
+
+> The Erlang view of the world is that everything is a process and that processes can interact only by exchanging messages.  (Joe Armstrong)
+
+### Processes 
+
+* Isolated from each other, run concurrent and communicate via message passing.
+* Erlang/Elixir processes ARE NOT operative system processes, processes in the BEAM are extremely lightweight.
+* We can have hundreds of thouthands of process running simultaneously.
+
+### Supervision trees
+* Supervisors
+* Workers
+
+All are processes
+---
+
+# The BEAM
+### Fault-tolerance
 
 ---
 
 # Elixir
+TODO: image
+Elixir is a dynamic, functional language designed for building scalable and maintainable applications.
 
+Elixir leverages the Erlang VM, known for running low-latency, distributed and fault-tolerant systems, while also being successfully used in web development and the embedded software domain.
 ---
 
 # Phoenix
+TODO: image
+The Elixir Web Framework!
 
+* Views/Templating
+* API
+* Channels
+* LiveView
 ---
 
 # ExUnit
