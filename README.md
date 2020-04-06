@@ -53,11 +53,34 @@ TODO: show erlang and elixir
 
 ---
 
+# The BEAM
+TODO: explain a little about actor model, processes, mailboxes, supervisors, etc
+
+---
+
 # Elixir
 
 ---
 
 # Phoenix
+
+---
+
+# ExUnit
+
+---
+
+# Hex.pm
+
+TODO: Package manager for the Erlang ecosystem.
+
+---
+
+# HexDocs
+
+---
+
+# Mix
 
 ---
 
