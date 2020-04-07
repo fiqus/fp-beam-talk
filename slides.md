@@ -18,9 +18,9 @@ FP is a paradigm for building software by:
 # Immutability
 In Erlang:
 !code code/immutability.erl erlang escript
-```** exception error: no match of right hand side value "Elixir"```
+⚠️ ```** exception error: no match of right hand side value "Elixir"```
 
-In Elixir, once created the data is immutable, but exists re-binding:
+In Elixir, once created, the data is immutable, but exists re-binding:
 !code code/immutability.exs
 ---
 
@@ -204,6 +204,7 @@ There are lot of things that Elixir uses from Erlang/OTP:
 * gen_server
 * gen_event
 * behaviours
+* ETS
 * ..etc
 
 ---
@@ -245,6 +246,8 @@ The Elixir Web Framework!
 # ExUnit
 
 ExUnit is a test-unit based framework that ships with Elixir.
+
+!code code/ex_unit.exs
 
 ---
 
