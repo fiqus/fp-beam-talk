@@ -6,3 +6,10 @@ code.inline {
 img[src*="#float-right"] {
   float: right;
 }
+
+.dark-slide {
+  color: white;
+}
+.dark-slide p {
+  font-size: 40pt;
+}

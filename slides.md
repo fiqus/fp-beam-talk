@@ -188,7 +188,7 @@ Dynamic functional language designed for building scalable and maintainable appl
 
 Elixir leverages the Erlang VM, known for running **low-latency**, **distributed** and **fault-tolerant** systems, while also being successfully used in web development and the embedded software domain.
 
-Created by **José Valim** in 2011.
+Created by **José Valim** in 2011. 💜
 
 GitHub: [https://github.com/elixir-lang](https://github.com/elixir-lang)
 
@@ -199,11 +199,28 @@ GitHub: [https://github.com/elixir-lang](https://github.com/elixir-lang)
 
 There are lot of things that Elixir uses from Erlang/OTP:
 
-* Application
-* Supervisor
+* application
+* supervisor
 * gen_server
 * gen_event
-* 
+* behaviours
+* ..etc
+
+---
+!slide_classes dark-slide
+!slide_background img/think_meme.gif
+
+So, if you learn **Erlang**...
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+you will learn the **Elixir**'s bases!
 
 ---
 
@@ -212,15 +229,17 @@ There are lot of things that Elixir uses from Erlang/OTP:
 <br />
 The Elixir Web Framework!
 
-* Views/Templating
-* Ecto - query and database wrapper
-* API
-* Channels - websockets
-* Generators (HTML and json)
-* PubSub - subscriptions to topics (used by Channels broadcasts)
-* LiveView - NEW functionality for front-end! 🎉
+* `Views/Templating`
+* `Ecto` - query and database wrapper with migrations
+* `API`
+* `Channels` - websockets
+* `Generators` (HTML and json) - generate the models, views, etc.
+* `PubSub` - subscriptions to topics (used by Channels broadcasts)
+* `LiveView` - **New** functionality for front-end on top of Channels! 🎉
 
 [https://www.phoenixframework.org/](https://www.phoenixframework.org/)
+
+[Phoenix HexDocs](https://hexdocs.pm/phoenix/Phoenix.html)
 ---
 
 # ExUnit
