@@ -2,8 +2,9 @@
 !footer Fiqus - Cooperativa de Software
 !custom_css slides.css
 
-# Welcome to fp_beam_talk!
+# Welcome to functional programming!
 We will talk about **Functional Programming** principles and present the **Erlang Ecosystem**, specially **Elixir**!
+
 ---
 
 # What is functional programming?
@@ -95,10 +96,12 @@ iex> [1, true, 2, false, 3, true] -- [true, false]
 
 Pattern match against lists:
 ```elixir
-iex> [head | _] = [1, 2, 3]
-[1, 2, 3]
+iex> [head, _ | tail] = [1, 2, 3, 4]
+[1, 2, 3, 4]
 iex> head
 1
+iex> tail
+[3, 4]
 ```
 ---
 
@@ -266,6 +269,7 @@ Allows you to publish your packages so they can be easily included as dependency
 
 ---
 
+![Hexpm](/img/hexpm.png#float-right)
 # HexDocs
 
 HexDocs is a place for Erlang/Elixir packages to host their documentation at https://hexdocs.pm  
