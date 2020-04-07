@@ -154,33 +154,73 @@ Actors (processes) <-> Messages (mailboxes)
 * Erlang/Elixir processes ARE NOT operative system processes, processes in the BEAM are extremely lightweight.
 * We can have hundreds of thouthands of process running simultaneously.
 
+---
+
+# The BEAM
 ### Supervision trees
 * Supervisors
 * Workers
 
-All are processes
+![Image](img/sup_tree.png)
+
+All are processes!
+
 ---
 
 # The BEAM
 ### Fault-tolerance
+<br />
+> "things will go wrong in production" (annonymous)
+<br /> 
+The BEAM provides supervisor **strategies** to describe HOW to restart processes:
+
+* `:one_for_one` - if a child process terminates, only that process is restarted.
+
+* `:one_for_all` - if a child process terminates, all other child processes are terminated and then all child processes (including the terminated one) are restarted.
+
+* `:rest_for_one` - if a child process terminates, the terminated child process and the rest of the children started after it, are terminated and restarted.
+---
+
+# Elixir
+> ![Image](img/elixir_logo.png)
+<br />
+Dynamic functional language designed for building scalable and maintainable applications.
+
+Elixir leverages the Erlang VM, known for running **low-latency**, **distributed** and **fault-tolerant** systems, while also being successfully used in web development and the embedded software domain.
+
+Created by **José Valim** in 2011.
+
+GitHub: [https://github.com/elixir-lang](https://github.com/elixir-lang)
 
 ---
 
 # Elixir
-TODO: image
-Elixir is a dynamic, functional language designed for building scalable and maintainable applications.
+> ![Image](img/elixir_logo.png)
 
-Elixir leverages the Erlang VM, known for running low-latency, distributed and fault-tolerant systems, while also being successfully used in web development and the embedded software domain.
+There are lot of things that Elixir uses from Erlang/OTP:
+
+* Application
+* Supervisor
+* gen_server
+* gen_event
+* 
+
 ---
 
-# Phoenix
-TODO: image
+# Phoenix Framework
+> ![Image](img/phoenix_logo.png)
+<br />
 The Elixir Web Framework!
 
 * Views/Templating
+* Ecto - query and database wrapper
 * API
-* Channels
-* LiveView
+* Channels - websockets
+* Generators (HTML and json)
+* PubSub - subscriptions to topics (used by Channels broadcasts)
+* LiveView - NEW functionality for front-end! 🎉
+
+[https://www.phoenixframework.org/](https://www.phoenixframework.org/)
 ---
 
 # ExUnit
