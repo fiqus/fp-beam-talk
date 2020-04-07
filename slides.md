@@ -229,9 +229,18 @@ ExUnit is a test-unit based framework that ships with Elixir.
 
 ---
 
+![Hexpm](/img/hexpm.png#float-right)
 # Hex.pm
 
-TODO: Package manager for the Erlang ecosystem.
+### Package manager for the Erlang/Elixir ecosystem.  
+Allows you to publish your packages so they can be easily included as dependency in other projects.
+
+1. Register a Hex user: `mix hex.user register`.
+2. Publish your package: `mix hex.publish`.
+3. Include your package as a dependency:
+* `{:prexent, "~> 0.2"}` will use the latest version at `0.2.0` or above, and below `0.3.0`.
+* `{:prexent, "0.2.5"}` will use the fixed/pinned version at `0.2.5`.
+* `{:prexent, github: "fiqus/prexent"}` will use `github` repo at `master` branch instead of `hex.pm`.
 
 ---
 
@@ -240,7 +249,27 @@ TODO: Package manager for the Erlang ecosystem.
 HexDocs is a place for Erlang/Elixir packages to host their documentation at https://hexdocs.pm  
 The documentation is automatically published when you publish your package with `mix hex.publish`
 
-!code code/hexdocs.exs
+```elixir
+defmodule MyApp.Hello do
+  @moduledoc """
+  This is the Hello module.
+  """
+  @moduledoc since: "1.0.0"
+
+  @doc """
+  Says hello to the given `name`.
+  Returns `:ok`.
+
+  ## Examples
+
+      iex> MyApp.Hello.world(:john)
+      :ok
+
+  """
+  @doc since: "1.3.0"
+  def world(name), do: IO.puts("hello #{name}")
+end
+```
 
 ---
 
