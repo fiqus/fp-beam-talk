@@ -2,17 +2,19 @@
 !footer Fiqus - Cooperativa de Software
 !custom_css slides.css
 
+!slide_classes intro-slide
 # Welcome to functional programming!
-We will talk about **Functional Programming** principles and present the **Erlang Ecosystem**, specially **Elixir**!
+We will talk about **Functional Programming** principles and _prexent_ the **Erlang Ecosystem**, specially **Elixir**!  
+![Lambda](img/lambda.jpg)
 
 ---
 
 # What is functional programming?
-
 FP is a paradigm for building software by:
-* composing *pure functions*
-* avoiding shared state, mutable data and side-effects
-* declarative rather than imperative
+* Taking functions as first-class citizens.
+* Composing pure functions.
+* Avoiding shared state, mutable data and side-effects.
+* Declarative rather than imperative.
 
 ---
 
@@ -36,7 +38,7 @@ iex> 2 = x
 ** (MatchError) no match of right hand side value: 1
 ```
 
-Can be used to match against complex data types (destructuring tuples):
+Can be used to match against complex data types (destructuring tuples, lists, etc):
 ```elixir
 iex> {a, b, c} = {:hello, "world", 42}
 {:hello, "world", 42}
@@ -71,18 +73,20 @@ iex> {y, ^x} = {2, 2}
 ---
 
 # Recursion
+The function calls itself until it matches an ending condition.
 !code code/recursion.exs
-TODO: add timers!
 
 ---
 
 # Tail recursion
+Is a special case of recursion where the calling function doesn't run any more computations after making its recursive call.  
+It avoids to push partial results to the call stack.
 !code code/recursion_tail.exs
-TODO: add timers!
 
 ---
 
-# Lists 
+# Lists
+They can contain any data type inside and they are one of the most used data structures.
 ```elixir
 iex> [1, 2, true, 3]
 [1, 2, true, 3]
@@ -224,7 +228,7 @@ So, if you learn **Erlang**...
 <br />
 <br />
 <br />
-you will learn the **Elixir**'s bases!
+you will learn the **Elixir**'s bases! <small>(and vice-versa)</small>
 
 ---
 

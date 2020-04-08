@@ -3,8 +3,15 @@ code.inline {
   background-color: #eaeaea;
 }
 
-img[src*="#float-right"] {
-  float: right;
+div.intro-slide {
+  background-color: white;
+}
+div.intro-slide img {
+  display: block;
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  width: auto;
 }
 
 .dark-slide {
@@ -12,4 +19,11 @@ img[src*="#float-right"] {
 }
 .dark-slide p {
   font-size: 40pt;
+}
+.dark-slide small {
+  font-size: 20pt;
+}
+
+img[src*="#float-right"] {
+  float: right;
 }
