@@ -13,6 +13,12 @@ div.intro-slide img {
   margin-right: auto;
   width: auto;
 }
+.intro-slide table,
+.intro-slide tr,
+.intro-slide th,
+.intro-slide td  {
+  border: none;
+}
 
 .dark-slide {
   color: white;

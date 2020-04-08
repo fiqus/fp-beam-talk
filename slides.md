@@ -5,7 +5,14 @@
 !slide_classes intro-slide
 # Welcome to functional programming!
 We will talk about **Functional Programming** principles and _prexent_ the **Erlang Ecosystem**, specially **Elixir**!  
-![Lambda](img/lambda.jpg)
+<br />
+<br />
+<br />
+<br />
+<br />
+| Pablo Brudnick| Diego Calero |
+| pbrudnick@fiqus.coop | dcalero@fiqus.coop |
+| [@pablobrud](https://twitter.com/pablobrud)   |         |
 
 ---
 
@@ -28,7 +35,7 @@ In Elixir, once created, the data is immutable, but exists re-binding:
 ---
 
 # Pattern matching
-## The match operator (=)
+### The match operator (=)
 ```elixir
 iex> x = 1
 1
@@ -50,15 +57,15 @@ iex> b
 ---
 
 # Pattern matching
-## The match operator (=)
-Match error will occur if the sides can't be matched:
+### The match operator (=)
+⚠️ Match error will occur if the sides can't be matched:
 ```elixir
 iex> {a, b, c} = {:hello, "world"}
 ** (MatchError) no match of right hand side value: {:hello, "world"}
 ```
 
-## The pin operator (^)
-Use the pin operator ^ when you want to pattern match against an existing variable’s value rather than rebinding the variable
+### The pin operator (^)
+Use the pin operator `^` when you want to pattern match against an existing variable’s value rather than rebinding the variable:
 ```elixir
 iex> x = 1
 1
@@ -100,12 +107,12 @@ iex> [1, true, 2, false, 3, true] -- [true, false]
 
 Pattern match against lists:
 ```elixir
-iex> [head, _ | tail] = [1, 2, 3, 4]
-[1, 2, 3, 4]
+iex> [head | tail] = [1, 2, 3]
+[1, 2, 3]
 iex> head
 1
 iex> tail
-[3, 4]
+[2, 3]
 ```
 ---
 
@@ -204,7 +211,7 @@ GitHub: [https://github.com/elixir-lang](https://github.com/elixir-lang)
 # Elixir
 > ![Image](img/elixir_logo.png)
 
-There are lot of things that Elixir uses from Erlang/OTP:
+There are lot of _great_ abstractions that Elixir uses from Erlang/OTP:
 
 * application
 * supervisor
@@ -212,7 +219,10 @@ There are lot of things that Elixir uses from Erlang/OTP:
 * gen_event
 * behaviours
 * ETS
+* Umbrella apps
 * ..etc
+
+And there's another Elixir-specific functionality -> _macros_ ... ![Image](img/mind_blowing.gif)
 
 ---
 !slide_classes dark-slide
@@ -252,7 +262,7 @@ The Elixir Web Framework!
 
 # ExUnit
 
-ExUnit is a test-unit based framework that ships with Elixir.
+ExUnit is a test-unit based framework that ships with Elixir ✅
 
 !code code/ex_unit.exs
 
@@ -323,16 +333,39 @@ The file `mix.lock` will hold the freezed dependencies versions that can be upgr
 
 # Useful Resources
 
-### Books
+### Books 📚
 * Elixir in Action: https://www.manning.com/books/elixir-in-action-second-edition
 * Programming Elixir 1.6: https://pragprog.com/book/elixir16/programming-elixir-1-6
 * Programming Phoenix 1.4: https://pragprog.com/book/phoenix14/programming-phoenix-1-4
 * Metaprogramming Elixir: https://pragprog.com/book/cmelixir/metaprogramming-elixir
+* Learn you some Erlang: https://learnyousomeerlang.com/
+* Erlang in Anger: https://www.erlang-in-anger.com/
+* Property-Based Testing with PropEr, Erlang, and Elixir: https://propertesting.com/
 
 ### Others
-* Small exercises for Erlang: https://github.com/lambdaclass/erlings
+* Small FP exercises with Erlang: https://github.com/lambdaclass/erlings
 * Weekly Email Newsletter at Elixir Radar: http://plataformatec.com.br/elixir-radar
 * Code Sync YouTube channel: https://www.youtube.com/channel/UC47eUBNO8KBH_V8AfowOWOw
+* Phoenix LiveView: https://dockyard.com/blog/2018/12/12/phoenix-liveview-interactive-real-time-apps-no-need-to-write-javascript
+
+---
+
+# Useful examples:
+
+* Umbrella apps: https://github.com/fiqus/lambdex/tree/master/apps  
+`$ mix new my_project --umbrella` and then inside `my_project/apps` you can create projects using `mix new...`.
+
+* Supervision tree setup: https://github.com/fiqus/coophub/blob/master/lib/coophub/application.ex#L15-L40  
+Placed in the application file.
+
+* Behaviours: https://github.com/fiqus/coophub/blob/master/lib/coophub/backends/behaviour.ex  
+
+* Ecto schema: https://github.com/fiqus/surgex/blob/master/lib/surgex/surgeries/surgery.ex  
+
+* Phoenix LiveView: https://github.com/fiqus/prexent/blob/master/lib/prexent_web/live/slides.ex  
+This slides are using that.
+
+* Phoenix LiveView examples (Phoenix Phrenzy winners) https://phoenixphrenzy.com/results
 
 ---
 
@@ -340,7 +373,7 @@ The file `mix.lock` will hold the freezed dependencies versions that can be upgr
 
 We love Elixir and had lots of fun creating some interesting open-source projects, come and see!
 
-* **Prexent:** https://github.com/fiqus/prexent  
+* **Prexent:** https://github.com/fiqus/prexent (This presentation was created with this! ❤️)  
 🎥 Fast, live and beautiful presentations from Markdown powered by Phoenix LiveView
 
 * **Lambdex:** https://github.com/fiqus/lambdex  
@@ -357,3 +390,15 @@ Real-time web chat application using Phoenix LiveView + PubSub + Presence for so
 
 * **Narosky API:** https://github.com/fiqus/narosky_api  
 The Fiqus bio species API 🐦 🌿
+
+---
+# Sources
+
+* https://elixir-lang.org/getting-started/introduction.html
+* https://hexdocs.pm/phoenix/Phoenix.html
+* https://hex.pm/
+
+
+---
+
+# Thank you!
