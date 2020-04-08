@@ -7,7 +7,8 @@
 We will talk about **Functional Programming** principles and _prexent_ the **Erlang Ecosystem**, specially **Elixir**!  
 <br />
 <br />
-<br />
+![Image](img/github.png) 
+[https://github.com/fiqus/fp-beam-talk/](https://github.com/fiqus/fp-beam-talk/)
 <br />
 <br />
 | Pablo Brudnick| Diego Calero |
@@ -188,11 +189,11 @@ All are processes!
 <br /> 
 The BEAM provides supervisor **strategies** to describe HOW to restart processes:
 
-* `:one_for_one` - if a child process terminates, only that process is restarted.
+* `one_for_one` - if a child process terminates, only that process is restarted.
 
-* `:one_for_all` - if a child process terminates, all other child processes are terminated and then all child processes (including the terminated one) are restarted.
+* `one_for_all` - if a child process terminates, all other child processes are terminated and then all child processes (including the terminated one) are restarted.
 
-* `:rest_for_one` - if a child process terminates, the terminated child process and the rest of the children started after it, are terminated and restarted.
+* `rest_for_one` - if a child process terminates, the terminated child process and the rest of the children started after it, are terminated and restarted.
 ---
 
 # Elixir
@@ -331,25 +332,6 @@ The file `mix.lock` will hold the freezed dependencies versions that can be upgr
 
 ---
 
-# Useful Resources
-
-### Books 📚
-* Elixir in Action: https://www.manning.com/books/elixir-in-action-second-edition
-* Programming Elixir 1.6: https://pragprog.com/book/elixir16/programming-elixir-1-6
-* Programming Phoenix 1.4: https://pragprog.com/book/phoenix14/programming-phoenix-1-4
-* Metaprogramming Elixir: https://pragprog.com/book/cmelixir/metaprogramming-elixir
-* Learn you some Erlang: https://learnyousomeerlang.com/
-* Erlang in Anger: https://www.erlang-in-anger.com/
-* Property-Based Testing with PropEr, Erlang, and Elixir: https://propertesting.com/
-
-### Others
-* Small FP exercises with Erlang: https://github.com/lambdaclass/erlings
-* Weekly Email Newsletter at Elixir Radar: http://plataformatec.com.br/elixir-radar
-* Code Sync YouTube channel: https://www.youtube.com/channel/UC47eUBNO8KBH_V8AfowOWOw
-* Phoenix LiveView: https://dockyard.com/blog/2018/12/12/phoenix-liveview-interactive-real-time-apps-no-need-to-write-javascript
-
----
-
 # Useful examples:
 
 * Umbrella apps: https://github.com/fiqus/lambdex/tree/master/apps  
@@ -361,6 +343,11 @@ Placed in the application file.
 * Behaviours: https://github.com/fiqus/coophub/blob/master/lib/coophub/backends/behaviour.ex  
 
 * Ecto schema: https://github.com/fiqus/surgex/blob/master/lib/surgex/surgeries/surgery.ex  
+
+* Prexent HexDocs: https://hexdocs.pm/prexent/api-reference.html  
+
+* Pipe operator `|>`: https://github.com/fiqus/coophub/blob/master/lib/coophub_web.ex#L29-L34  
+or one more complex https://github.com/fiqus/coophub/blob/master/lib/coophub/cache_warmer.ex#L127-L140
 
 * Phoenix LiveView: https://github.com/fiqus/prexent/blob/master/lib/prexent_web/live/slides.ex  
 This slides are using that.
@@ -392,6 +379,26 @@ Real-time web chat application using Phoenix LiveView + PubSub + Presence for so
 The Fiqus bio species API 🐦 🌿
 
 ---
+
+# Useful Resources
+
+### Books 📚
+* Elixir in Action: https://www.manning.com/books/elixir-in-action-second-edition
+* Programming Elixir 1.6: https://pragprog.com/book/elixir16/programming-elixir-1-6
+* Programming Phoenix 1.4: https://pragprog.com/book/phoenix14/programming-phoenix-1-4
+* Metaprogramming Elixir: https://pragprog.com/book/cmelixir/metaprogramming-elixir
+* Learn you some Erlang: https://learnyousomeerlang.com/
+* Erlang in Anger: https://www.erlang-in-anger.com/
+* Property-Based Testing with PropEr, Erlang, and Elixir: https://propertesting.com/
+
+### Others
+* Small FP exercises with Erlang: https://github.com/lambdaclass/erlings
+* Weekly Email Newsletter at Elixir Radar: http://plataformatec.com.br/elixir-radar
+* Code Sync YouTube channel: https://www.youtube.com/channel/UC47eUBNO8KBH_V8AfowOWOw
+* Phoenix LiveView: https://dockyard.com/blog/2018/12/12/phoenix-liveview-interactive-real-time-apps-no-need-to-write-javascript
+
+---
+
 # Sources
 
 * https://elixir-lang.org/getting-started/introduction.html
@@ -401,4 +408,4 @@ The Fiqus bio species API 🐦 🌿
 
 ---
 
-# Thank you!
+# Thank you! 👋
