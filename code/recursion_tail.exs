@@ -4,11 +4,11 @@ defmodule Recursion do
     factorial_tail(n, 1)
   end
 
-  def factorial_tail(0, accum) do
+  defp factorial_tail(0, accum) do
     accum
   end
 
-  def factorial_tail(n, accum) do
+  defp factorial_tail(n, accum) do
     factorial_tail(n - 1, n * accum)
   end
 end
