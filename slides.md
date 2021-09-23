@@ -340,14 +340,13 @@ The file `mix.lock` will hold the freezed dependencies versions that can be upgr
 * Supervision tree setup: https://github.com/fiqus/coophub/blob/master/lib/coophub/application.ex#L15-L40  
 Placed in the application file.
 
-* Behaviours: https://github.com/fiqus/coophub/blob/master/lib/coophub/backends/behaviour.ex  
+* Behaviours: https://github.com/fiqus/coophub/blob/master/lib/coophub/backends/backends.ex 
 
 * Ecto schema: https://github.com/fiqus/surgex/blob/master/lib/surgex/surgeries/surgery.ex  
 
 * Prexent HexDocs: https://hexdocs.pm/prexent/api-reference.html  
 
-* Pipe operator `|>`: https://github.com/fiqus/coophub/blob/master/lib/coophub_web.ex#L29-L34  
-or one more complex https://github.com/fiqus/coophub/blob/master/lib/coophub/cache_warmer.ex#L127-L140
+* Pipe operator `|>`: https://github.com/fiqus/coophub/blob/master/lib/coophub_web.ex#L29-L34
 
 * Phoenix LiveView: https://github.com/fiqus/prexent/blob/master/lib/prexent_web/live/slides.ex  
 This slides are using that.
