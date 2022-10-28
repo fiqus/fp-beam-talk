@@ -1,0 +1,39 @@
+body {
+  font-family: system-ui;
+}
+
+code.inline {
+  display: inline;
+  background-color: #eaeaea;
+  font-size: 22pt;
+  color: #c933a3
+}
+
+code.highlighted {
+  font-size: 16pt;
+}
+
+.intro-slide table,
+.intro-slide tr,
+.intro-slide th,
+.intro-slide td  {
+  border: none;
+}
+
+blockquote, p {
+  font-size: 22pt;
+}
+
+li {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 22pt;
+}
+
+img[src*="#float-right"] {
+  float: right;
+}
+
+strong {
+  font-weight: bolder;
+}

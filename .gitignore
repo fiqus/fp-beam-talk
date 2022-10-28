@@ -3,3 +3,6 @@
 /deps/
 
 .elixir_ls
+
+erl_crash.dump
+*.beam
